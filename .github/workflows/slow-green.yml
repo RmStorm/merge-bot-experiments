@@ -8,8 +8,8 @@ jobs:
   wait-and-pass:
     runs-on: ubuntu-latest
     steps:
-      - name: Wait 60 seconds
-        run: sleep 600
+      - name: Wait 180 seconds
+        run: sleep 180
 
       - name: Pass
         run: echo "green"
