@@ -1,0 +1,15 @@
+name: slow-green
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  wait-and-pass:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait 60 seconds
+        run: sleep 60
+
+      - name: Pass
+        run: echo "green"
