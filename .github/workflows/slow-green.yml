@@ -5,6 +5,41 @@ on:
   workflow_dispatch:
 
 jobs:
+  wait-30s:
+    name: Wait 30 seconds
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait and pass
+        run: sleep 30
+
+  wait-60s:
+    name: Wait 60 seconds
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait and pass
+        run: sleep 60
+
+  wait-90s:
+    name: Wait 90 seconds
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait and pass
+        run: sleep 90
+
+  wait-120s:
+    name: Wait 120 seconds
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait and pass
+        run: sleep 120
+
+  wait-150s:
+    name: Wait 150 seconds
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait and pass
+        run: sleep 150
+
   wait-and-pass:
     runs-on: ubuntu-latest
     steps:
