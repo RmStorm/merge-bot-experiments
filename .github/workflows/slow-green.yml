@@ -40,7 +40,8 @@ jobs:
       - name: Wait and pass
         run: sleep 150
 
-  wait-and-pass:
+  wait-180s:
+    name: Wait 180 seconds
     runs-on: ubuntu-latest
     steps:
       - name: Wait 180 seconds
