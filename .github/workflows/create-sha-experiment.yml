@@ -1,0 +1,32 @@
+name: Create SHA experiment PR
+on:
+  workflow_dispatch:
+    inputs:
+      head:
+        required: true
+        type: string
+      base:
+        default: main
+        type: string
+      title:
+        required: true
+        type: string
+permissions:
+  contents: read
+  pull-requests: write
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      HEAD: ${{ inputs.head }}
+      BASE: ${{ inputs.base }}
+      TITLE: ${{ inputs.title }}
+    steps:
+      - name: Create draft for owner approval testing
+        run: |
+          case "$HEAD" in experiment/sha-20261105-*) ;; *) exit 1 ;; esac
+          gh api --method POST "repos/$GITHUB_REPOSITORY/pulls" \
+            -f head="$HEAD" -f base="$BASE" -f title="$TITLE" \
+            -f body="Bot-authored PR for the authorized Chute fast-forward/code-owner experiment." \
+            -F draft=true

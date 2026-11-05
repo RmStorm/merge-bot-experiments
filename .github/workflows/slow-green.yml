@@ -10,42 +10,42 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Wait and pass
-        run: sleep 30
+        run: sleep ${{ startsWith(github.head_ref, 'experiment/sha-20261105-') && 2 || 30 }}
 
   wait-60s:
     name: Wait 60 seconds
     runs-on: ubuntu-latest
     steps:
       - name: Wait and pass
-        run: sleep 60
+        run: sleep ${{ startsWith(github.head_ref, 'experiment/sha-20261105-') && 2 || 60 }}
 
   wait-90s:
     name: Wait 90 seconds
     runs-on: ubuntu-latest
     steps:
       - name: Wait and pass
-        run: sleep 90
+        run: sleep ${{ startsWith(github.head_ref, 'experiment/sha-20261105-') && 2 || 90 }}
 
   wait-120s:
     name: Wait 120 seconds
     runs-on: ubuntu-latest
     steps:
       - name: Wait and pass
-        run: sleep 120
+        run: sleep ${{ startsWith(github.head_ref, 'experiment/sha-20261105-') && 2 || 120 }}
 
   wait-150s:
     name: Wait 150 seconds
     runs-on: ubuntu-latest
     steps:
       - name: Wait and pass
-        run: sleep 150
+        run: sleep ${{ startsWith(github.head_ref, 'experiment/sha-20261105-') && 2 || 150 }}
 
   wait-180s:
     name: Wait 180 seconds
     runs-on: ubuntu-latest
     steps:
       - name: Wait 180 seconds
-        run: sleep 180
+        run: sleep ${{ startsWith(github.head_ref, 'experiment/sha-20261105-') && 2 || 180 }}
 
       - name: Pass
         run: echo "green"
