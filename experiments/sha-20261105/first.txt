@@ -1,0 +1,1 @@
+Exact SHA fast-forward probe.
